@@ -18,5 +18,4 @@ foo1()
 foo2()
 module3()
 $('body').css('background','skyblue')
-console.log(1)
 
