@@ -22,12 +22,12 @@
     define(function (require,exports,module) {
       var name = 'module1';
     
-      function fun() {
+      function fun1() {
         console.log(name);
       }
     
       //暴露模块
-      exports.showName = {fun}
+      exports.showName = fun1
     });
     ```
   * module2.js
@@ -48,12 +48,12 @@
     define(function (require,exports,module) {
       var name = 'module3';
     
-      function foo() {
+      function fun3() {
         console.log(name);
       }
     
       //暴露模块
-      module.exports = {foo}
+      module.exports = fun3
     });
     ```
   * module4.js
@@ -62,7 +62,7 @@
     define(function (require,exports,module) {
       var name = 'module4';
     
-      function foo() {
+      function fun4() {
         console.log(name);
       }
       //同步引入module2
@@ -73,7 +73,7 @@
         m3.foo()
       })
       //暴露模块
-      module.exports = {foo}
+      module.exports = fun4
     });
     ```
   * main.js : 主(入口)模块
@@ -81,8 +81,8 @@
     define(function (require) {
       var m1 = require('./module1')
       var m4 = require('./module4')
-      m1.showName.fun()
-      m4.foo()
+      m1()
+      m4()
     })
     ```
 4. index.html:
