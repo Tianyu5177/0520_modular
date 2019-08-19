@@ -13,12 +13,14 @@ function foo2() {
 }
 
 //简写方式
-//export {arr,foo1,foo2}
+export {arr,foo1,foo2}
 
 //完整方式
+/*
 export {
   arr as haha1,
   foo1 as haha2,
   foo2 as haha3
 }
+*/
 
